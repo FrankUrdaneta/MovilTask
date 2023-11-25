@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/rubik-font@2.10.1/css/rubik.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/inter@3.15.0/css/inter.css"
+    />
+
+    <title>Movil Task</title>
+    <style>
+      :root {
+        --color-oscuro: #000113; /* Cambia este valor al color primario deseado */
+        --color-claro: #f1f1f1; /* Cambia este valor al color secundario deseado */
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Roboto";
+        background-color: #f4f4f4;
+      }
+
+      .container {
+        max-width: 400px; /* Puedes ajustar este valor según tus necesidades */
+        margin: 0 auto;
+        padding: 0px;
+        background-color: #000113;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 2rem;
+      }
+
+      .hero-container {
+        position: relative;
+        width: 100%;
+        /* height: 100vh;  */
+        overflow: hidden; /* Asegura que la imagen no se desborde del contenedor */
+        border-radius: 2rem;
+      }
+
+      .hero-image {
+        width: 100%;
+        height: 500px;
+        object-fit: cover; /* Ajusta la imagen para cubrir completamente el contenedor */
+      }
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        text-align: center;
+      }
+
+      img {
+        width: 100px; /* Ajusta el ancho del logo según sea necesario */
+        height: auto; /* Mantiene la proporción original de la imagen */
+      }
+      .logo {
+        width: 42px;
+        height: 42px;
+      }
+      .log_title {
+        display: flex;
+      }
+      .logo_c {
+        display: flex;
+        align-items: center;
+      }
+      .title {
+        font-weight: bold;
+        font-size: 24px;
+        font-family: "Rubik";
+        margin-bottom: -10px;
+      }
+      .subtitle {
+        font-size: 14px;
+        font-family: "Inter";
+      }
+      .grupo_titles {
+        text-align: left;
+        margin-left: 1rem;
+      }
+      /* Establece el estilo de fuente y tamaño para la clase .ingresa */
+      .ingresa {
+        font-weight: 800; /* Extra Bold */
+        font-size: 32px;
+        margin-bottom: 20px;
+        margin-bottom: 5rem;
+        text-align: center;
+        color: white;
+      }
+
+      .inputs {
+        position: relative;
+        top: -7rem;
+      }
+      .input-container {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+      }
+
+      .input-container input {
+        border: none;
+        border-bottom: 1px solid #ccc;
+        background: none;
+        color: white;
+        padding: 5px;
+        margin-bottom: 10px;
+        outline: none;
+      }
+
+      .button {
+        background-color: #334155;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+        margin-bottom: 3rem;
+      }
+
+      .button:hover {
+        background-color: #496080;
+      }
+      .line-with-text {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .line {
+        flex: 1;
+        border-bottom: 1px solid #ccc;
+      }
+
+      .or-button {
+        background-color: transparent;
+        color: #334155;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        border: 1px solid #334155;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      .or-button:hover {
+        color: #496080;
+        border: 1px solid #496080;
+      }
+
+      .input-container {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+      }
+
+      label {
+        transition: all 0.3s;
+        transform-origin: left bottom;
+        font-size: 14px;
+        margin-bottom: 5px;
+        color: #aaa;
+      }
+
+      input {
+        border: none;
+        border-bottom: 1px solid #ccc;
+        background: none;
+        color: white;
+        padding: 5px;
+        margin-bottom: 10px;
+        outline: none;
+        font-size: 16px;
+        transition: border-color 0.3s;
+      }
+
+      input:focus {
+        border-color: #3498db; /* Cambia el color del borde cuando el input está enfocado */
+      }
+
+      input:placeholder-shown + label {
+        transform: translateY(16px);
+        font-size: 16px;
+      }
+      .ajust {
+        display: grid;
+        justify-content: center;
+      }
+      /* Agrega aquí tus estilos adicionales según sea necesario */
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <section class="hero-container">
+        <img
+          src="./images/Subtract.png"
+          alt="Imagen de fondo"
+          class="hero-image"
+        />
+        <div class="overlay">
+          <div class="content">
+            <div class="row log_title">
+              <div class="col-md-6 logo_c">
+                <img class="logo" src="./images/Logo.png" alt="Logo" />
+              </div>
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-md-12 grupo_titles">
+                    <h3 class="title">MóvilTask</h3>
+                    <p class="subtitle">Simplifica tus tareas diarias.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- seccion inputs -->
+      <div class="ajust">
+        <section class="inputs">
+          <div class="ingresa">Ingresar</div>
+
+          <div class="input-container">
+            <input type="text" placeholder="Usuario" autocomplete="off" />
+            <input
+              type="password"
+              placeholder="Contraseña"
+              autocomplete="off"
+            />
+          </div>
+
+          <button class="button">Ingresar</button>
+
+          <div class="line-with-text">
+            <div class="line"></div>
+            <div style="padding: 0 10px; color: white">o continua con</div>
+            <div class="line"></div>
+          </div>
+
+          <button class="or-button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-postcard"
+              viewBox="0 0 16 16"
+            >
+              <path
+                style="margin-right: 5px"
+                fill-rule="evenodd"
+                d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zM1 4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm7.5.5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0zM2 5.5a.5.5 0 0 1 .5-.5H6a.5.5 0 0 1 0 1H2.5a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5H6a.5.5 0 0 1 0 1H2.5a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5H6a.5.5 0 0 1 0 1H2.5a.5.5 0 0 1-.5-.5M10.5 5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zM13 8h-2V6h2z"
+              />
+            </svg>
+            <span style="margin-left: 5px"> NFC</span>
+          </button>
+          <p style="color: #334155; text-align: center; margin-bottom: 3rem">
+            No tienes una cuenta? <span style="color: white">Contactanos</span>
+          </p>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
