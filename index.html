@@ -198,7 +198,25 @@
         /* justify-content: center; */
         margin: 0 2rem;
       }
+      .button.shake {
+        animation: shake 0.5s;
+      }
 
+      @keyframes shake {
+        0%,
+        100% {
+          transform: translateX(0);
+        }
+        25% {
+          transform: translateX(-5px);
+        }
+        50% {
+          transform: translateX(5px);
+        }
+        75% {
+          transform: translateX(-5px);
+        }
+      }
       @media only screen and (max-width: 600px) {
         body {
           background: linear-gradient(to bottom, #334155 50%, #000113 50%);
@@ -239,15 +257,21 @@
           <div class="ingresa">Ingresar</div>
 
           <div class="input-container">
-            <input type="text" placeholder="Usuario" autocomplete="off" />
             <input
+              id="usuario"
+              type="text"
+              placeholder="Usuario"
+              autocomplete="off"
+            />
+            <input
+              id="contrasena"
               type="password"
               placeholder="Contraseña"
               autocomplete="off"
             />
           </div>
 
-          <button class="button">Ingresar</button>
+          <button id="botonLogin" class="button">Ingresar</button>
 
           <div class="line-with-text">
             <div class="line"></div>
@@ -278,5 +302,34 @@
         </section>
       </div>
     </div>
+    <script>
+      document
+        .getElementById("botonLogin")
+        .addEventListener("click", function () {
+          console.log("ll");
+          // Validar aquí el usuario y la contraseña (ejemplo simple)
+          var usuario = document.getElementById("usuario").value;
+          var contrasena = document.getElementById("contrasena").value;
+          var boton = document.getElementById("botonLogin");
+          if (
+            usuario === "usuarioCorrecto" &&
+            contrasena === "contrasenaCorrecta"
+          ) {
+            // Acciones cuando el login es correcto (puedes redirigir a otra página, etc.)
+          } else {
+            // Agregamos la clase shake para la animación
+            boton.classList.add("shake");
+            // Cambiamos temporalmente el color del botón
+            boton.style.backgroundColor = "#ff4c4c";
+            boton.innerHTML = "Usuario o contraseña invalidos";
+            // Eliminamos la clase shake después de un tiempo para detener la animación
+            setTimeout(function () {
+              boton.classList.remove("shake");
+              boton.style.backgroundColor = "#334155";
+              boton.innerHTML = "Ingresar";
+            }, 3000); // Duración de la animación en milisegundos
+          }
+        });
+    </script>
   </body>
 </html>
